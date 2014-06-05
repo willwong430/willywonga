@@ -1,0 +1,27 @@
+<% if @writings.any? %>
+<ol class="writings">
+	<%= render partial: 'writing/_writing', collection: @writings %>
+</ol>
+<ul class="pagination"></ul>
+<% else %>
+<%= form_for(@writing, :html => {:multipart => true}) do |f| %>
+
+	<form>
+		<%= f.label :date, "Date of post:", class: 'attach' %>
+		<%= f.text_field :date, class: 'post' %>
+	</form>
+	<form>
+		<%= f.label :title, "Title of post:", class: 'attach' %>
+		<%= f.text_field :title, class: 'post' %>
+	</form>
+	<form>
+		<%= f.label :content, "Guts of post:", class: 'attach' %>
+		<%= f.text_area :content, class: 'post' %>
+	</form>
+
+	<a href="#" class="button expand">Expanded Button</a>
+
+<% end %>
+
+
+<% end %>

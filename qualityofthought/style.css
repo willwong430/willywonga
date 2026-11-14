@@ -1,0 +1,20 @@
+:root { --bg:#faf7f2; --fg:#23211f; --muted:#8a847b; --accent:#b4562b; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#161412; --fg:#f1ece4; --muted:#9a938a; --accent:#e08a5c; }
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body {
+  background: var(--bg); color: var(--fg);
+  font-family: Georgia, "Times New Roman", serif;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+main { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 2rem 1rem; }
+.date { font: 0.8rem/1 system-ui, sans-serif; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); margin-bottom: 2rem; }
+blockquote { max-width: 38rem; margin: 0; text-align: center; }
+blockquote p { font-size: clamp(1.5rem, 4.5vw, 2.4rem); line-height: 1.35; margin: 0 0 1.5rem; }
+blockquote p::before { content: "\201C"; color: var(--accent); }
+blockquote p::after { content: "\201D"; color: var(--accent); }
+#author { font: 1rem system-ui, sans-serif; color: var(--muted); }
+#author::before { content: "\2014\00a0"; }
+footer.site { text-align: center; padding: 1.5rem; font: 0.8rem system-ui, sans-serif; color: var(--muted); }
